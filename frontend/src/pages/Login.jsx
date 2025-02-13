@@ -19,7 +19,7 @@ const Login = () => {
     setError(null);
 
     try {
-      const res = await fetch("http://localhost:10000/api/auth/login", {
+      const res = await fetch("https://moviex-ms30.onrender.com/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -11,7 +11,7 @@ const App = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const res = await fetch(`http://localhost:10000/api/auth/me`, {
+        const res = await fetch(`https://moviex-ms30.onrender.com/api/auth/me`, {
           credentials: "include",
          
         });
@@ -33,7 +33,7 @@ const App = () => {
   const handleLogout = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`http://localhost:10000/api/auth/logout`, {
+      const res = await fetch(`https://moviex-ms30.onrender.com/api/auth/logout`, {
         method: "POST",
         credentials: "include",
       });

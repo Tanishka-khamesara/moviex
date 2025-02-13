@@ -12,7 +12,7 @@ const App = () => {
   useEffect(() => {
     const fetchAuthUser = async () => {
       try {
-        const res = await fetch("http://localhost:10000/api/auth/me", {
+        const res = await fetch("https://moviex-ms30.onrender.com/api/auth/me", {
           method: "GET",
           credentials: "include",
         });

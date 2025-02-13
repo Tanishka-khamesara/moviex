@@ -25,7 +25,7 @@ const SignUpPage = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:10000/api/auth/signup",
+        "https://moviex-ms30.onrender.com/api/auth/signup",
         formData,
         {
           headers: {
