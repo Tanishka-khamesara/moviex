@@ -9,7 +9,7 @@ const cookieParser = require("cookie-parser");
 const connectMongoDb=require("./db/connectMongoDb.js")
 dotenv.config();
 const corsOptions = {
-    origin: ['http://localhost:5173'] ,
+    origin: ['http://localhost:5173',"https://moviex-w641.vercel.app"] ,
     credentials: true,
 };
 app.use(cors(corsOptions));
