@@ -1,0 +1,245 @@
+const moviesData = [
+   
+        {
+          id: 1,
+          title: "The Shawshank Redemption",
+          year: 1994,
+          image: "https://tse1.mm.bing.net/th?id=OIP.mUrPwO94BbkhpksOcMmqGgHaLH&pid=Api&P=0&h=180",
+        },
+        {
+          id: 2,
+          title: "The Godfather",
+          year: 1972,
+          image: "https://posterspy.com/wp-content/uploads/2019/04/godfather.jpg",
+        },
+        {
+          id: 3,
+          title: "The Dark Knight",
+          year: 2008,
+          image: "https://image.tmdb.org/t/p/original/eP5NL7ZlGoW9tE9qnCdHpOLH1Ke.jpg",
+        },
+        {
+          id: 4,
+          title: "The Lord of the Rings: The Return of the King",
+          year: 2003,
+          image: "https://image.tmdb.org/t/p/original/uexxR7Kw1qYbZk0RYaF9Rx5ykbj.jpg",
+        },
+        {
+          id: 5,
+          title: "12 Angry Men",
+          year: 1957,
+          image: "https://tse2.mm.bing.net/th?id=OIP.mrChsuFytZXo6KLN-k8tpQHaLH&pid=Api&P=0&h=180",
+        },
+        {
+          id: 6,
+          title: "Pulp Fiction",
+          year: 1994,
+          image: "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+        },
+        {
+          id: 7,
+          title: "The Good, the Bad and the Ugly",
+          year: 1966,
+          image: "https://tse2.mm.bing.net/th?id=OIP.pLhFaMigbdDP0OvigrXelgHaKj&pid=Api&P=0&h=180",
+        },
+        {
+          id: 8,
+          title: "Fight Club",
+          year: 1999,
+          image: "https://tse2.mm.bing.net/th?id=OIP.Lo8eg7Fua7MtsvDT2MlEPgHaLH&pid=Api&P=0&h=180",
+        },
+        {
+          id: 9,
+          title: "The Lord of the Rings: The Fellowship of the Ring",
+          year: 2001,
+          image: "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_.jpg",
+        },
+        {
+          id: 10,
+          title: "Forrest Gump",
+          year: 1994,
+          image: "https://image.tmdb.org/t/p/original/8aBHdTp6MZ7RRE45maIYrEPo6IJ.jpg",
+        },
+        {
+          id: 11,
+          title: "Inception",
+          year: 2010,
+          image: "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mz._V1_.jpg",
+        },
+        {
+          id: 12,
+          title: "The Lord of the Rings: The Two Towers",
+          year: 2002,
+          image: "https://m.media-amazon.com/images/M/MV5BZGMxZTdjZmYtMmE2Ni00ZTdkLWI5NTgtNjlmMjBiNzU2MmI5XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+        },
+        {
+          id: 13,
+          title: "Star Wars: Episode V - The Empire Strikes Back",
+          year: 1980,
+          image: "https://m.media-amazon.com/images/M/MV5BYmU1N2E2OTctYWRiNC00OTQ5LWEwNTMtZmEwYTY4NjI3OTc5XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+        },
+        {
+          id: 14,
+          title: "The Matrix",
+          year: 1999,
+          image: "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+        },
+        {
+          id: 15,
+          title: "Goodfellas",
+          year: 1990,
+          image: "https://m.media-amazon.com/images/M/MV5BY2NkZjEzMDgtN2RjYy00YzM1LWI4ZmQtMjIwYjFjNmI3ZGEwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+        },
+        {
+          id: 16,
+          title: "One Flew Over the Cuckoo's Nest",
+          year: 1975,
+          image: "https://m.media-amazon.com/images/M/MV5BZjA0OWVhOTAtYWQxNi00YzNhLWI4ZjYtNjFjZTEyYjJlNDVlL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+        },
+        {
+          id: 17,
+          title: "Seven Samurai",
+          year: 1954,
+          image: "https://m.media-amazon.com/images/M/MV5BNWQ3OTM4NjAtNTY1NC00ZTc0LWIwYzYtZmM3YjgxZmVmZTY5XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+        },
+        {
+          id: 18,
+          title: "Se7en",
+          year: 1995,
+          image: "https://m.media-amazon.com/images/M/MV5BOTUwODM5MTctZjczMi00OTk4LTg3NWUtNmVhMTAzNTNjYjcyXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+        },
+        {
+          id: 19,
+          title: "The Silence of the Lambs",
+          year: 1991,
+          image: "https://m.media-amazon.com/images/M/MV5BNjNhZTk0ZmEtNjJhMi00YzFlLWE1MmEtYzM1M2ZmMGMwMTU4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+        },
+        {
+            id: 20,
+            title: "City of God",
+            year: 2002,
+            image: "https://m.media-amazon.com/images/M/MV5BOTMwYjc5ZmItY"
+        },
+        {
+          id: 21,
+          title: "Life Is Beautiful",
+          year: 1997,
+          image: "https://m.media-amazon.com/images/M/MV5BYmJmM2Q4NmMtYThmNC00ZjRlLWEyZmItZTIwOTBlZDQ3NTQ1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+        },
+        {
+          id: 22,
+          title: "Spirited Away",
+          year: 2001,
+          image: "https://m.media-amazon.com/images/M/MV5BMjlmZmI5MDctNDE2YS00YWE0LWE5ZWItZDBhYWQ0NGQwMjRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_.jpg",
+        },
+        {
+          id: 23,
+          title: "Saving Private Ryan",
+          year: 1998,
+          image: "https://m.media-amazon.com/images/M/MV5BZjhkMDM4MWItZTVjOC00ZDRhLThmYTAtM2I5NzBmNmNlMzI1XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_.jpg",
+        },
+        {
+          id: 24,
+          title: "The Green Mile",
+          year: 1999,
+          image: "https://m.media-amazon.com/images/M/MV5BMTUxMzQyNjA5MF5BMl5BanBnXkFtZTYwOTU2NTY3._V1_.jpg",
+        },
+        {
+          id: 25,
+          title: "Interstellar",
+          year: 2014,
+          image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+        },
+        {
+          id: 26,
+          title: "Parasite",
+          year: 2019,
+          image: "https://m.media-amazon.com/images/M/MV5BYWZjMjk3ZTItODQ2ZC00NTY5LWE0ZDYtZTI3MjcwN2Q5NTVkXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg",
+        },
+        {
+          id: 27,
+          title: "Léon: The Professional",
+          year: 1994,
+          image: "https://m.media-amazon.com/images/M/MV5BODllNWE0MmEtYjUwZi00ZjY3LThmNmQtZjZlMjI2YTZjYmQ0XkEyXkFqcGdeQXVyNTc1NTQxODI@._V1_.jpg",
+        },
+        {
+          id: 28,
+          title: "The Prestige",
+          year: 2006,
+          image: "https://m.media-amazon.com/images/I/51NiGlapXlL._AC_.jpg",
+        },
+        {
+          id: 29,
+          title: "The Lion King",
+          year: 1994,
+          image: "https://m.media-amazon.com/images/M/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWIwZWQtYWYxYTI4MzExNjNjXkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_.jpg",
+        },
+        {
+          id: 30,
+          title: "The Departed",
+          year: 2006,
+          image: "https://m.media-amazon.com/images/M/MV5BMTI1MTY2OTIxNV5BMl5BanBnXkFtZTYwNjQ4NjY3._V1_.jpg",
+        },
+        {
+          id: 31,
+          title: "Whiplash",
+          year: 2014,
+          image: "https://m.media-amazon.com/images/M/MV5BOTA5NDZlZGUtMjAxOS00YTRkLTkwYmMtYWQ0NWEwZDZiNjEzXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+        },
+        {
+          id: 32,
+          title: "The Intouchables",
+          year: 2011,
+          image: "https://m.media-amazon.com/images/M/MV5BMTYxNDA3MDQwNl5BMl5BanBnXkFtZTcwNTU4Mzc1Nw@@._V1_.jpg",
+        },
+        {
+          id: 33,
+          title: "Gladiator",
+          year: 2000,
+          image: "https://m.media-amazon.com/images/M/MV5BMDliMmNhNDEtODUyOS00MjNlLTgxODEtN2U3NzIxMGVkZTA1L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+        },
+        {
+          id: 34,
+          title: "The Avengers",
+          year: 2012,
+          image: "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+        },
+        {
+          id: 35,
+          title: "Django Unchained",
+          year: 2012,
+          image: "https://m.media-amazon.com/images/M/MV5BMjIyNTQ5NjQ1OV5BMl5BanBnXkFtZTcwODg1MDU4OA@@._V1_.jpg",
+        },
+        {
+          id: 36,
+          title: "The Wolf of Wall Street",
+          year: 2013,
+          image: "https://m.media-amazon.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_.jpg",
+        },
+        {
+          id: 37,
+          title: "The Grand Budapest Hotel",
+          year: 2014,
+          image: "https://m.media-amazon.com/images/M/MV5BMzM5NjUxOTEyMl5BMl5BanBnXkFtZTgwNjEyMDM0MDE@._V1_.jpg",
+        },
+        {
+          id: 38,
+          title: "The Dark Knight Rises",
+          year: 2012,
+          image: "https://m.media-amazon.com/images/M/MV5BMTk4ODQzNDY3Ml5BMl5BanBnXkFtZTcwODA0NTM4Nw@@._V1_.jpg",
+        },
+        {
+          id: 39,
+          title: "The Shawkshank Redemption",
+          year: 1994,
+          image: "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWFjZTAwXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+        },
+        {
+            id: 40,
+            title: "Joker",
+            year: 2019,
+            image: "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQX"
+        }
+];
+  
+export default moviesData;

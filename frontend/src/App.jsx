@@ -1,21 +1,49 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
-import Login from './pages/Login'
-import Signup from './pages/SignUp'
-import Home from './pages/Home';
-import Cookies from "js-cookie";
+import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router-dom";
+import Login from "./pages/Login";
+import Signup from "./pages/SignUp";
+import Home from "./pages/Home";
+import { Toaster } from 'react-hot-toast';
+import "./app.css"
 
 const App = () => {
-  const isAuthenticated = !!Cookies.get("userToken");
+  const [authUser, setAuthUser] = useState(null);
+
+  useEffect(() => {
+    const fetchAuthUser = async () => {
+      try {
+        const res = await fetch("http://localhost:10000/api/auth/me", {
+          method: "GET",
+          credentials: "include",
+        });
+
+        if (!res.ok) {
+          throw new Error("Failed to fetch authentication data");
+        }
+
+        const data = await res.json();
+        setAuthUser(data);
+      } catch (error) {
+        console.error(error);
+        setAuthUser(null);
+      }
+    };
+
+    fetchAuthUser();
+  }, []);
+
   return (
-    <Router>
+    <>
+    <Router>  {/* ✅ Wrapped inside BrowserRouter */}
       <Routes>
-        <Route path="/" element={isAuthenticated ? <Home /> : <Navigate to="/login" />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/" element={authUser ? <Home /> : <Navigate to="/login" />} />
+        <Route path="/login" element={!authUser ? <Login /> : <Navigate to="/" />} />
+        <Route path="/signup" element={!authUser ? <Signup /> : <Navigate to="/" />} />
       </Routes>
     </Router>
-  )
-}
+      <Toaster />
+      </>
+  );
+};
 
-export default App
+export default App;

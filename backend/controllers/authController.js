@@ -53,15 +53,15 @@ const signup = async (req, res, next) => {
 
 const login = async (req, res, next) => {
     try {
-        const { fullname, password } = req.body;
+        const { email, password } = req.body;
 
-        if (!fullname || !password) {
+        if (!email || !password) {
             return res.status(400).json({
-                error:"Username and password are required"
+                error:"email and password are required"
             })
         }
 
-        const user = await User.findOne({ fullname });
+        const user = await User.findOne({ email });
         if (!user) {
             return res.status(400).json({error: "Invalid username or password" })
         }

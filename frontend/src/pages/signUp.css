@@ -1,15 +1,15 @@
-/* Scoped styles for login-container only */
-.login-container {
+/* Scoped styles for signup-container only */
+.signup-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
-  
+ 
   backdrop-filter: blur(10px);
 }
 
-.login-container .right-section {
+.signup-container .right-section {
   background: rgba(255, 255, 255, 0.1);
   padding: 40px;
   border-radius: 15px;
@@ -31,7 +31,7 @@
   }
 }
 
-.login-container .title {
+.signup-container .title {
   font-size: 2.5rem;
   margin-bottom: 20px;
   font-weight: bold;
@@ -39,17 +39,17 @@
   text-shadow: 0 0 10px rgba(255, 111, 97, 0.7);
 }
 
-.login-container .login-form {
+.signup-container .signup-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.login-container .input-field {
+.signup-container .input-field {
   position: relative;
 }
 
-.login-container .input-field input {
+.signup-container .input-field input {
   width: 100%;
   padding: 12px;
   border: none;
@@ -61,16 +61,21 @@
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-.login-container .input-field input::placeholder {
+.signup-container .input-field input::placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.login-container .input-field input:focus {
+.signup-container .input-field input:focus {
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 0 10px rgba(255, 111, 97, 0.5);
 }
 
-.login-container .login-button {
+.signup-container .input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.signup-container .signup-button {
   padding: 12px;
   border: none;
   border-radius: 8px;
@@ -82,27 +87,27 @@
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.login-container .login-button:hover {
+.signup-container .signup-button:hover {
   background: #ff4a3d;
   transform: translateY(-2px);
 }
 
-.login-container .error-message {
+.signup-container .error-message {
   color: #ff4a3d;
   font-size: 0.9rem;
   margin-top: 10px;
 }
 
-.login-container .signup-section {
+.signup-container .signin-section {
   margin-top: 20px;
 }
 
-.login-container .signup-text {
+.signup-container .signin-text {
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.7);
 }
 
-.login-container .signup-button {
+.signup-container .signin-button {
   margin-top: 10px;
   padding: 10px 20px;
   border: none;
@@ -115,7 +120,7 @@
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.login-container .signup-button:hover {
+.signup-container .signin-button:hover {
   color: #ff4a3d;
   transform: translateY(-2px);
 }
