@@ -4,7 +4,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/SignUp";
 import Home from "./pages/Home";
 import { Toaster } from 'react-hot-toast';
-import "./app.css"
+import "./App.css"
 
 const App = () => {
   const [authUser, setAuthUser] = useState(null);
